@@ -3,8 +3,11 @@ function renderCircles(circles) {
     // HINT: You probably need to write a for loop!
     //       Or, if you're feeling fancy, use .map() 
     return `
-        <div class="text-center mt-5">
-            <code>${JSON.stringify(circles)}</code>
+        <div class="text-center mt-5 ">
+            <div class = "mb-3" style=" width:200px; height:200px; border-radius:${circles[0].radius}%; background-color:${circles[0].color};"></div>
+            <div class = "mb-3" style=" margin-left: 50px; width:100px; height:100px; border-radius:${circles[0].radius}%; background-color:${circles[1].color};"></div>
+            <div class = "mb-3" style=" width:200px; height:200px; border-radius:${circles[0].radius}%; background-color:${circles[2].color};"></div>
+            <div style="margin-left: 75px; width:50px; height:50px; border-radius:${circles[0].radius}%; background-color:${circles[3].color};"></div>    
         </div>
     `
 }

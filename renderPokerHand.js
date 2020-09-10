@@ -1,9 +1,17 @@
 
 function renderPokerHand(pokerHand) {
     // HINT: You can use <img /> tags that point to the card images in the /cards folder
+    let htmlString = "";
+    for (let i = 0; i < pokerHand.length; i++) {
+        const card = pokerHand[i];
+        htmlString += `
+        <img src="cards/${card.value}${card.suit}.png">
+        `
+    }
+    
     return `
         <div class="text-center mt-5">
-            <code>${JSON.stringify(pokerHand)}</code>
+            ${htmlString}
         </div>
     `
 }
