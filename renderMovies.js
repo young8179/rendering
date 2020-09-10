@@ -1,8 +1,29 @@
 
 function renderMovies(movies) {
+    let htmlString = "";
+    for (let i = 0; i < movies.length; i++) {
+        const movie = movies[i];
+        htmlString += `
+        <div class="rounded" style="margin: 20px; display: flex; width: 600px; background-color: lightgray; padding: 10px;">
+            <img style="width: 250px; margin: 10px;" src="${movie.poster}">
+            <div class="rounded" style="width: 500px; margin: 10px; background-color: white; text-align: left; padding: 10px;">
+                <p style="font-weight: bold; font-size: 30px; margin-bottom: 0px;">${movie.title}</p>
+                <p style="margin-top: 0px; font-size: 18px;">${movie.year}</p>
+
+                <p style="margin-bottom: 0px; font-size: 30px;">IMDB:</p>
+                <p style="margin-top: 0px; font-size: 30px;">${movie.imdbRating} / 10</p>
+
+                <p style="margin-bottom: 0px; font-size: 30px;">Rotten Tomatoes:</p>
+                <p style="margin-top: 0px; font-size: 30px;">${movie.rottenTomatoesRating * 100}%</p>
+            </div>
+        </div>
+        `
+        
+    }
+    
     return `
         <div class="text-center mt-5">
-            <code>${JSON.stringify(movies)}</code>
+            ${htmlString}
         </div>
     `
 }
